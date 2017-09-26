@@ -50,6 +50,9 @@ First, add this line to the end of your conf.ini file
 
 This will create the field `$.xyz_custom_field` in the larger context of the JSON-LD that will later get merged with the information from multiple sources. The `value` is the merge tag which is used as a placeholder in the template until information from the csv file can get incorporated. The `csv_column` is the name of the column in the roster.csv file which will provide the data for each recipient.
 
+## Changing the roster
+By default the file create_v2_template.py file will use the conf.ini settings and pull This file is located in the sample_data folder and you should edit this to add more or less recipients.
+
 Now add the `xyz_custom_field` to the roster_testnet.csv file. Your file should look something like this
 
 ```
@@ -91,8 +94,18 @@ If there aren't any errors you should have created a template and you can find t
 ## Overview
 Here we're going to use the information stored in the template and the roster file to create some unsigned certificates, these will be JSON files that we'll copy into our quick start Docker imaage to issue the certificates.
 
-## Changing the roster
-By default when you create a custom template the file create_v2_template.py file will use the conf.ini settings and pull recipient information from rosters/roster_testnet.csv which is located in the the sample_data folder. 
+Once your roster_testnet.csv is populated with information to your liking, run this command.
+
+`python cert_tools/instantiate_v2_certificate_batch.py -c conf.ini`
+
+If all goes well, you should see that some files have appeared in the unsigned certificates folder. There should be as many json files are there are recipients.
+
+These files should now be ready to be copied to the cert-issuer.
+
+# 3 - Setting up the cert-issuer
+
+
+
 
 
 
