@@ -29,6 +29,8 @@ Follow the installation procedure outlined in the readme of the link from above.
 
 + Then the unsigned certificates were copied to cert-issuer for signing and issuing on the blockchain.
 
+# 1 - Creating the template
+
 ## Changing Images
 
 To change the logo image and the signature image you will need to add the image files to the images folder inside sample_data and then make some adjustments to the conf.ini file. Look for the #images tag and there you can replace the default images file names with the names of the files you just uploaded. 
@@ -76,10 +78,21 @@ I'm still learning JSON-LD but what I think is going on here is we're adding our
 
 ## Creating the template!
 
-Now that we've changed some text, modified some images, and added a custom field into we can generate a template
+Now that we've changed some text, modified some images, and added a custom field into we can generate a template. 
 
-## Adding to the roster
-By defualt when you create a custom template the file create_v2_template.py file will use the conf.ini settings and pull recipient information from rosters/roster_testnet.csv which is located in the the sample_data folder. 
+Use this command from the **cert-tools** directory.
+
+`python cert_tools/create_v2_certificate_template.py -c conf.ini` 
+
+If there aren't any errors you should have created a template and you can find the file `test_template.json` in the sample_data/certificates folder. You can open it up and inspect it to see if your customized information was added before you move on.
+
+# 2 - Instantiating a batch
+
+## Overview
+Here we're going to use the information stored in the template and the roster file to create some unsigned certificates, these will be JSON files that we'll copy into our quick start Docker imaage to issue the certificates.
+
+## Changing the roster
+By default when you create a custom template the file create_v2_template.py file will use the conf.ini settings and pull recipient information from rosters/roster_testnet.csv which is located in the the sample_data folder. 
 
 
 
