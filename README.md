@@ -104,6 +104,34 @@ These files should now be ready to be copied to the cert-issuer.
 
 # 3 - Setting up the cert-issuer
 
+Follow the instructions provided on the readme [here](https://github.com/blockchain-certificates/cert-issuer)
+
+## Overview
+
+You'll 
+
+If you want to use the custom templated certificates we just generated please read the helpful tip below first.
+
+## Helpful tips!
+
+You'll be copying your unsigned certificates you made in the cert-tools into the Docker container where they will be associated in a batch with a mock bitcoin transaction, the resulting files will then need to be transfered out of the Docker instance into the cert-viewer.
+
+The command you'll want to use will look something like:
+
+`docker cp <cert-tools>/sample_data/unsigned_certificates/. <docker-container-name>:/etc/cert-issuer/data/unsigned_certificates/ `
+
+Once moved, continue on with the the fake bitcoin genereation and issuing.
+
+---
+
+If you encounter an issue where even after sending to address the issuer balance is lacking, take the issuer hash in the error message and interpolate that into this command
+
+`bitcoin-cli sendtoaddress <issuer-hash-goes here> 5`
+
+# 4 - Viewing the certificate
+
+
+
 
 
 
