@@ -108,8 +108,6 @@ Follow the instructions provided on the readme [here](https://github.com/blockch
 
 ## Overview
 
-You'll 
-
 If you want to use the custom templated certificates we just generated please read the helpful tip below first.
 
 ## Helpful tips!
@@ -134,6 +132,8 @@ If you encounter an issue where even after sending to address the issuer balance
 
 
 
+## TIPS
+If you're developing on OSX when you issue a certificate you might encounter a SSL error that prevents you from accessing the balance of your wallet, check this website to update your certificates https://stackoverflow.com/questions/42098126/mac-osx-python-ssl-sslerror-ssl-certificate-verify-failed-certificate-verify
 
 
 
