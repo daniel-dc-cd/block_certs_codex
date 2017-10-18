@@ -153,7 +153,7 @@ If you're developing on OSX when you issue a certificate you might encounter a S
 
 1. Move old graduate information to another sheet.
 
-2. Put in information for new batch, fill out their, Name, a public key you get from [bitaddress testet](https://www.bitaddress.org/testnet=true) or [bitaddress](https://www.bitaddress.org) for real, (give the private key to the student), belt levels. IMPORTANT: this information is written directly into the certificate so make sure things look the way you want them to.
+2. Put in information for new batch, fill out their, Name, a public key you get from [bitaddress testet](https://www.bitaddress.org/testnet=true) or [bitaddress](https://www.bitaddress.org) for real, (give the private key to the student, you can also use the batch creator to create multiple addresses at once), belt levels. IMPORTANT: this information is written directly into the certificate so make sure things look the way you want them to.
 
 3. Navigate into the cert_tools_deployed and instatiate the batch of unsigned certificates by using this command on the cert tools server, activate the ct_venv virtual environment
 
