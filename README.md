@@ -135,14 +135,21 @@ If you're developing on OSX when you issue a certificate you might encounter a S
 
 ## cert issuing and viewer guide
 
+```
     ############################################################################
     # Developer note                                                          #
-    # This conf_***.ini files in both the issuer and the tools will need to   # # be updated to include the new mainnet issuing address and private key   # # when the mainnet wallet goes                                            #
+    # This conf_***.ini files in both the issuer and the tools will need to   # 
+    # be updated to include the new mainnet issuing address and private key   # 
+    # when the mainnet wallet goes                                            #
     # live.                                                                   #
     #                                                                         #
-    # If something about the certificates need to be updated, the certificate # # template needs to be remade, make sure we test the certificates on our  # # test-net dev server to make sure that the certificates will be created  # # and validated prior to issuing certificates on main-net and burning     # # REAL money.                                                             #
+    # If something about the certificates need to be updated, the certificate # 
+    # template needs to be remade, make sure we test the certificates on our  # 
+    # test-net dev server to make sure that the certificates will be created  # 
+    # and validated prior to issuing certificates on main-net and burning     # 
+    # REAL money.                                                             #
     ############################################################################
-
+```
 
 1. Move old graduate information to another sheet.
 
