@@ -131,6 +131,8 @@ If you encounter an issue where even after sending to address the issuer balance
 ## TIPS
 If you're developing on OSX when you issue a certificate you might encounter a SSL error that prevents you from accessing the balance of your wallet, check this website to update your certificates https://stackoverflow.com/questions/42098126/mac-osx-python-ssl-sslerror-ssl-certificate-verify-failed-certificate-verify
 
+If pysha3 fails in build wheel, sudo apt-get install build-essential python-dev python3-dev
+
 ## Certificate tooling, issuing and viewing on Dojo Servers.
 
 ## cert issuing and viewer guide
@@ -154,6 +156,8 @@ If you're developing on OSX when you issue a certificate you might encounter a S
 1. Move old graduate information to another sheet.
 
 2. Put in information for new batch, fill out their, Name, a public key you get from [bitaddress testet](https://www.bitaddress.org/testnet=true) or [bitaddress](https://www.bitaddress.org) for real, (give the private key to the student, you can also use the batch creator to create multiple addresses at once), belt levels. IMPORTANT: this information is written directly into the certificate so make sure things look the way you want them to.
+
+(!!NOTE!!) If there have been unsigned certificates left behind in the unsigned_certificates folder in the cert_tools_deployed data directory, remove the old files, we should't need to save these as we will only care about the blockchained certificates.
 
 3. Navigate into the cert_tools_deployed and instatiate the batch of unsigned certificates by using this command on the cert tools server, activate the ct_venv virtual environment
 
@@ -197,6 +201,18 @@ If you're developing on OSX when you issue a certificate you might encounter a S
     ```
 
 9. Go to certificate.dojo.new and review a few of the certificates that were recently updated and make sure the validations are working. If there are any issues, delete the offending certificates so they do no appear on the website.
+
+## THINGS TO CHANGE FROM TESTNET TO MAIN NET
+1 . cert-tools conf.ini
+        issuer_public_key=ecdsa-koblitz-pubkey:<put new key here>
+        regenerate issuer and revocation with new pubkey
+2. cert-issuer conf_mainnet.ini
+    change issuing address
+    change bitcoin chain type
+    put private key in pk_issuer.txt
+3. cert-viewer
+    put in new issuer.json 
+    put in new revocation.json
 
 
 
